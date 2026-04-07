@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我是，十二二二二二二</title>
     <link rel="preload" as="image" href="assets/avatar.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
     <style>
         /* =========================================
            🎨 Impeccable 核心调色盘
@@ -47,7 +48,7 @@
         ========================================= */
         .tool-bar { width: 70px; height: 100%; background-color: var(--bg-toolbar); border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 40px; gap: 20px; z-index: 10; }
         .tool-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; color: var(--icon-grey); transition: all 0.2s ease; user-select: none; }
-        .tool-btn svg, .tool-btn img { fill: currentColor; width: 24px; height: 24px; display: block; }
+        .tool-btn i { font-size: 24px; line-height: 1; display: block; }
         .tool-btn:hover { background-color: var(--bg-sidebar); color: var(--accent); transform: scale(1.05); }
 
         /* =========================================
@@ -89,7 +90,7 @@
 
         .social-links { list-style: none; display: flex; gap: 25px; margin-top: 10px; }
         .social-icon { display: flex; align-items: center; justify-content: center; color: var(--icon-grey); transition: color 0.3s ease; }
-        .social-icon svg, .social-icon img { fill: currentColor; width: 24px; height: 24px; display: block; }
+        .social-icon i { font-size: 24px; line-height: 1; display: block; }
         .social-icon:hover { color: var(--text-title-hover); }
 
         /* =========================================
@@ -301,8 +302,8 @@
     <div class="tool-bar">
         <div class="tool-btn" id="langToggle" title="Language" style="font-size: 1.1rem; font-weight: 500;">En</div>
         <div class="tool-btn" id="themeToggle" title="Theme">
-            <img id="moonIcon" src="UI-UX/moon.svg" alt="" aria-hidden="true">
-            <img id="sunIcon" src="UI-UX/sun-dim.svg" alt="" aria-hidden="true" style="display: none;">
+            <i id="moonIcon" class="ph ph-moon" aria-hidden="true"></i>
+            <i id="sunIcon" class="ph ph-sun-dim" aria-hidden="true" style="display: none;"></i>
         </div>
     </div>
 
@@ -317,9 +318,9 @@
             <p class="bio" data-zh="这是我的碎碎念小频道" data-en="My Digital Brain Dumps.">这是我的碎碎念小频道</p>
             
             <ul class="social-links">
-                <li><a href="https://t.me/SAZANAMI_7647" class="social-icon" title="Telegram" target="_blank"><img src="UI-UX/telegram-logo.svg" alt="Telegram logo"></a></li>
-                <li><a href="https://x.com/SAZANAMI_mirin" class="social-icon" title="Twitter" target="_blank"><img src="UI-UX/twitter-logo.svg" alt="Twitter logo"></a></li>
-                <li><a href="https://github.com/sazanami-7467" class="social-icon" title="GitHub" target="_blank"><img src="UI-UX/github-logo.svg" alt="GitHub logo"></a></li>
+                <li><a href="https://t.me/SAZANAMI_7647" class="social-icon" title="Telegram" target="_blank" aria-label="Telegram"><i class="ph ph-telegram-logo" aria-hidden="true"></i></a></li>
+                <li><a href="https://x.com/SAZANAMI_mirin" class="social-icon" title="Twitter" target="_blank" aria-label="Twitter"><i class="ph ph-twitter-logo" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/sazanami-7467" class="social-icon" title="GitHub" target="_blank" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
