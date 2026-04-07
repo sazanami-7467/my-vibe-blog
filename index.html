@@ -215,6 +215,7 @@
         .friend-avatar.qpomelo { background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%); }
         .friend-avatar.sxzz { background: linear-gradient(135deg, #4facfe 0%, #00c6ff 100%); }
         .friend-avatar.atlasnow { background: linear-gradient(135deg, #111827 0%, #374151 100%); }
+        .friend-avatar.patrick { background: linear-gradient(135deg, #7c8aa5 0%, #4b5563 100%); }
         .friend-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .friend-info { min-width: 0; display: flex; flex-direction: column; }
         .friend-info h4 { margin: 0 0 6px 0; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
@@ -230,28 +231,95 @@
 
         @media (max-width: 860px) {
             body { height: auto; min-height: 100vh; overflow: auto; flex-direction: column; }
-            .tool-bar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; justify-content: flex-end; padding: 14px 20px; gap: 14px; }
-            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 36px 24px 28px; }
-            .sidebar-content { max-width: none; }
+            .tool-bar {
+                position: sticky;
+                top: 0;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                flex-direction: row;
+                justify-content: flex-end;
+                padding: 14px 20px;
+                gap: 14px;
+                background-color: var(--bg-toolbar);
+                backdrop-filter: blur(18px);
+                z-index: 30;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: none;
+                padding: 28px 24px 12px;
+                justify-content: center;
+            }
+            .sidebar-content {
+                max-width: 680px;
+                width: 100%;
+                padding: 28px 24px;
+                border: 1px solid var(--border);
+                border-radius: 28px;
+                background: linear-gradient(180deg, var(--bg-sidebar) 0%, var(--bg-body) 100%);
+                box-shadow: 0 14px 36px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+            .avatar-box { margin-bottom: 18px; }
+            .social-links { justify-content: center; margin-top: 18px; gap: 22px; }
             .main-content { min-height: 0; }
-            .nav-bar { height: auto; padding: 0 24px; overflow-x: auto; }
-            .nav-links { gap: 28px; min-width: max-content; }
-            .content-body { padding: 28px 24px 40px; }
+            .nav-bar {
+                position: static;
+                z-index: 20;
+                height: auto;
+                padding: 6px 24px 0;
+                overflow-x: auto;
+                background: transparent;
+                backdrop-filter: none;
+                border-bottom: none;
+            }
+            .nav-links {
+                gap: 8px;
+                min-width: max-content;
+                width: auto;
+                max-width: none;
+                padding: 6px;
+                border: 1px solid var(--border);
+                border-radius: 999px;
+                background: linear-gradient(180deg, var(--bg-sidebar) 0%, var(--bg-body) 100%);
+                box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+            }
+            .nav-link {
+                padding: 10px 16px;
+                border-radius: 999px;
+                white-space: nowrap;
+            }
+            .nav-link.active {
+                background-color: var(--text-main);
+                color: var(--bg-body);
+                box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+            }
+            .nav-slider { display: none; }
+            .content-body { padding: 24px 24px 40px; align-items: center; }
+            .section-content { max-width: 680px; }
             .gacha-action { flex-wrap: wrap; }
             .ig-card-wrapper { max-width: min(100%, 520px); }
             .post-title { font-size: 1.28rem; }
             .todo-panel { padding: 22px; border-radius: 20px; }
+            .friends-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
         }
 
         @media (max-width: 640px) {
             .tool-bar { padding: 12px 16px; }
             .tool-btn { width: 40px; height: 40px; }
-            .sidebar { padding: 28px 18px 22px; }
+            .sidebar { padding: 20px 16px 10px; }
+            .sidebar-content { padding: 22px 18px; border-radius: 24px; }
             .avatar { width: 124px; height: 124px; }
             h1 { font-size: 1.45rem; }
             .bio { font-size: 0.92rem; }
-            .nav-bar { padding: 0 18px; }
-            .nav-links { gap: 22px; font-size: 0.95rem; }
+            .social-links { gap: 20px; }
+            .nav-bar { padding: 6px 18px 0; }
+            .nav-links { font-size: 0.94rem; padding: 5px; }
+            .nav-link { padding: 9px 14px; }
             .content-body { padding: 24px 18px 32px; }
             .portfolio-section { margin-top: 28px; padding-top: 28px; }
             .gacha-circle { width: 42px; height: 42px; }
@@ -465,6 +533,16 @@
                             <span class="friend-link">atlasnow.xyz</span>
                         </div>
                     </a>
+                    <a href="https://www.tzih.top" class="friend-card" target="_blank">
+                        <div class="friend-avatar patrick">
+                            <img src="https://www.tzih.top/favicon.ico" alt="Patrick.T avatar" loading="lazy">
+                        </div>
+                        <div class="friend-info">
+                            <h4>Patrick.T</h4>
+                            <p class="friend-role" data-zh="设计工程师 / 动效设计师" data-en="Design Engineer / Motion Designer">设计工程师 / 动效设计师</p>
+                            <span class="friend-link">tzih.top</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -599,14 +677,25 @@
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section-content');
         const navSlider = document.getElementById('navSlider');
+        function syncNavSlider() {
+            const activeLink = document.querySelector('.nav-link.active');
+            if (!activeLink) return;
+            if (window.matchMedia('(max-width: 860px)').matches) {
+                navSlider.style.width = '0px';
+                navSlider.style.left = '0px';
+                return;
+            }
+            updateSlider(activeLink);
+        }
         function updateSlider(activeLink) {
             navSlider.style.width = activeLink.offsetWidth + 'px';
             navSlider.style.left = activeLink.offsetLeft + 'px';
         }
         window.addEventListener('DOMContentLoaded', () => {
-            const activeLink = document.querySelector('.nav-link.active');
-            if(activeLink) updateSlider(activeLink);
+            syncNavSlider();
         });
+        window.addEventListener('resize', syncNavSlider);
+        window.addEventListener('orientationchange', syncNavSlider);
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -652,7 +741,7 @@
                 document.querySelectorAll('[data-zh-ph][data-en-ph]').forEach(el => { el.placeholder = el.getAttribute('data-' + currentLang + '-ph'); });
                 if (currentGachaIndex !== -1) { renderGachaCard(currentGachaIndex, false); }
                 renderTodoChecklist();
-                setTimeout(() => { const activeLink = document.querySelector('.nav-link.active'); if(activeLink) updateSlider(activeLink); }, 10);
+                setTimeout(syncNavSlider, 10);
             });
         });
 
