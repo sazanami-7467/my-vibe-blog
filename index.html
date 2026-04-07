@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我是,十二二二二十</title>
+    <title>我是，十二二二二二二</title>
+    <link rel="preload" as="image" href="assets/avatar.jpg">
     <style>
         /* =========================================
            🎨 Impeccable 核心调色盘
@@ -53,7 +54,7 @@
            🏢 左侧区域
         ========================================= */
         .sidebar { width: clamp(260px, 22vw, 360px); height: 100%; background-color: var(--bg-sidebar); border-right: 1px solid var(--border); display: flex; justify-content: center; align-items: flex-start; padding: clamp(80px, 12vh, 140px) 25px 40px 25px; }
-        .sidebar-content { text-align: left; width: 100%; max-width: 280px; }
+        .sidebar-content { text-align: left; width: 100%; max-width: 280px; user-select: none; -webkit-user-select: none; }
 
         /* 💥 3D 物理交互头像区 - 终极加大版 */
         .avatar-box { 
@@ -71,13 +72,14 @@
             border-radius: 50%; 
             background-color: #eee; 
             border: 2px solid var(--border); 
-            background-image: url('assets/avatar.jpg'); 
-            background-size: cover; 
-            background-position: center; 
+            background-image: url('assets/avatar.jpg');
+            background-size: cover;
+            background-position: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
             will-change: transform; 
             transform-style: preserve-3d;
-            transform: translateZ(0); 
+            transform: translateZ(0);
+            overflow: hidden;
         }
 
         h1 { font-size: 1.7rem; font-weight: 500; margin-bottom: 15px; letter-spacing: 1px; }
@@ -126,7 +128,8 @@
         .ig-card-wrapper.is-visible { opacity: 1; transform: translateY(0); }
         .ig-card { background-color: var(--ig-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .ig-header { display: flex; align-items: center; padding: 12px 15px; border-bottom: 1px solid var(--border); }
-        .ig-header-avatar { width: 32px; height: 32px; border-radius: 50%; background-image: url('assets/avatar.jpg'); background-size: cover; margin-right: 10px; border: 1px solid var(--border); }
+        .ig-header-avatar { width: 32px; height: 32px; border-radius: 50%; margin-right: 10px; border: 1px solid var(--border); overflow: hidden; flex-shrink: 0; }
+        .ig-header-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .ig-header-name { font-weight: 600; font-size: 0.9rem; }
         .ig-image-container { width: 100%; background-color: var(--bg-sidebar); display: flex; justify-content: center; align-items: center; border-bottom: 1px solid var(--border); }
         .ig-image { width: 100%; height: auto; max-height: 600px; object-fit: contain; display: block; }
@@ -328,7 +331,9 @@
                     <div class="ig-card-wrapper" id="igCardWrapper">
                         <div class="ig-card">
                             <div class="ig-header">
-                                <div class="ig-header-avatar"></div>
+                                <div class="ig-header-avatar">
+                                    <img src="assets/avatar.jpg" alt="SAZANAMI avatar" loading="lazy" decoding="async">
+                                </div>
                                 <div class="ig-header-name">SAZANAMI</div>
                             </div>
                             <div class="ig-image-container">
@@ -414,14 +419,14 @@
                             <span class="friend-link">qpomelo.dev</span>
                         </div>
                     </a>
-                    <a href="https://sxzz.dev/zh/" class="friend-card" target="_blank">
+                    <a href="https://sxzz.dev/" class="friend-card" target="_blank">
                         <div class="friend-avatar sxzz">
                             <img src="https://sxzz.dev/avatar-zh.avif" alt="Zhizi avatar" loading="lazy">
                         </div>
                         <div class="friend-info">
-                            <h4 data-zh="智子" data-en="Zhizi">智子</h4>
+                            <h4 data-zh="智子" data-en="Kevin">智子</h4>
                             <p class="friend-role" data-zh="独立开发者" data-en="Indie Developer">独立开发者</p>
-                            <span class="friend-link">sxzz.dev/zh</span>
+                            <span class="friend-link">sxzz.dev</span>
                         </div>
                     </a>
                     <a href="https://atlasnow.xyz" class="friend-card" target="_blank">
